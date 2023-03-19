@@ -1,14 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-srand(time(NULL));
+mt19937 rng(chrono::steady_clock().now().time_since_epoch().count());
 
 typedef struct testcase {
     int a, b, c;
 } testcase;
 
 int random_number(int a, int b) {
-    return a + (rand() % b);
+    return a + (rng() % b);
 }
 
 testcase generate_testcase() {

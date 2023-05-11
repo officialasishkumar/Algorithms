@@ -4,4 +4,5 @@ for (int i = 0; i <= 1e6; i++)
     for (int i = 2; i <= 1e6; i++)
         if (spf[i] == i)
             for (int j = i; j <= 1e6; j += i)
-                spf[j] = i;
+                if (spf[j] == j)
+                    spf[j] = i;
